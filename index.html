@@ -1,0 +1,787 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Shucheng Liu | Homepage</title>
+  <meta name="author" content="Shucheng Liu">
+  <meta name="description" content="Shucheng Liu — Ph.D. student in Statistics at UNC-Chapel Hill. Generative modeling, multimodal foundation models, and causal inference.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <style>
+    body, * {
+      cursor: url('images/icon/cursor.png'), auto;
+    }
+    /* 1. typography: a touch larger, with real line-height */
+    body, td, th, tr, p, a, li {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    papertitle {
+      line-height: 1.35;
+    }
+
+    /* 2. links: deeper amber for legibility, underline on hover */
+    a {
+      color: #d97706;
+    }
+    a:hover, a:focus {
+      color: #92400e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .interests li::marker {
+      color: #d97706;
+    }
+
+    /* 4. contact chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 6px 0 4px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 13px;
+      border: 1px solid rgba(17, 24, 39, 0.14);
+      border-radius: 999px;
+      background: #fff;
+      color: #374151;
+      font-size: 14px;
+      line-height: 1;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .chip:hover, .chip:focus {
+      color: #92400e;
+      border-color: rgba(217, 119, 6, 0.55);
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .chip svg {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 auto;
+    }
+    .chip svg.brand {
+      fill: var(--brand);
+    }
+
+    /* 7. consistent spacing between sections (headings sit just before their tables) */
+    heading {
+      display: block;
+      margin: 52px 0 12px;
+    }
+    #internships heading {
+      margin-left: 10px;
+    }
+    #internships {
+      margin-top: 0 !important;
+    }
+
+    /* 6. phones and narrow windows */
+    @media (max-width: 768px) {
+      #about > tbody > tr > td {
+        padding: 0 4% !important;
+      }
+      name {
+        font-size: 30px;
+      }
+      .about-grid, .about-grid tbody, .about-grid td {
+        display: block;
+        width: auto !important;
+        max-width: none !important;
+      }
+      .about-grid tr {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .about-grid td {
+        padding: 6px 1% !important;
+      }
+      .about-photo {
+        text-align: center;
+        padding-top: 18px !important;
+      }
+      .portrait {
+        width: 58% !important;
+        max-width: 230px !important;
+        border-radius: 14px !important;
+      }
+      #internships tr, #internships td {
+        display: block;
+        width: auto !important;
+        padding: 6px 1% !important;
+      }
+      #internships td:first-child {
+        text-align: center;
+        padding-top: 10px !important;
+      }
+      .org-logo {
+        max-width: 150px;
+      }
+      heading {
+        margin: 38px 0 10px;
+      }
+      #internships heading {
+        margin-left: 0;
+      }
+      .publications-table, .publications-table tbody {
+        display: block;
+      }
+      .publications-table tr[data-tags] {
+        display: block;
+        margin: 0 0 14px;
+        border: 1px solid rgba(0, 0, 0, 0.14);
+        border-radius: 10px;
+        background: #fff;
+        overflow: hidden;
+      }
+      .publications-table tr[data-tags][style*="lightyellow"] {
+        background: lightyellow;
+      }
+      .publications-table tr[data-tags] > td {
+        display: block;
+        width: auto !important;
+        padding: 14px 16px !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+      }
+      .publications-table tr[data-tags] > td:first-child {
+        padding-bottom: 0 !important;
+        text-align: center;
+      }
+      .paper-thumb img {
+        max-width: 100% !important;
+      }
+      #service {
+        width: 100% !important;
+      }
+      #service td {
+        padding: 0 1% !important;
+      }
+    }
+
+    .inl {
+      height: 17px;
+      width: auto;
+      vertical-align: -3px;
+      margin-right: 4px;
+    }
+    .contact-links svg.brand {
+      fill: var(--brand);
+      stroke: none;
+    }
+    a, a * {
+      cursor: url('images/icon/cursor-pointer.png'), pointer !important;
+    }
+    .paper-thumb img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.10);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: url('images/icon/cursor-pointer.png'), zoom-in !important;
+    }
+    .publications-table tr[data-tags]:hover .paper-thumb img {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+    }
+    .paper-thumb-hint {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: center;
+    }
+    .venue-accepted { color: #c62828; }
+    .venue-review { color: #6b7280; }
+
+    /* Click-to-enlarge overlay for figures */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(17, 17, 17, 0.78);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 96vw;
+      max-height: 92vh;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      transform: scale(0.96);
+      transition: transform 0.2s ease;
+    }
+    .lightbox.open img {
+      transform: scale(1);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      color: #333;
+      font-size: 20px;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    .intern-desc {
+      margin: 6px 0 0 0;
+      padding-left: 18px;
+      color: #333;
+    }
+    .intern-desc li {
+      margin: 2px 0;
+    }
+    .service-list li {
+      margin: 4px 0;
+    }
+    @font-face {
+      font-family: 'Pacifico';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/pacifico-latin-400-normal.woff2') format('woff2');
+    }
+    name {
+      font-family: 'Pacifico', 'Brush Script MT', cursive;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #111;
+    }
+    .exp-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .exp-date {
+      color: #555;
+      white-space: nowrap;
+    }
+    .interests-lead {
+      margin-bottom: 4px;
+    }
+    .interests {
+      margin: 0 0 14px 0;
+      padding-left: 20px;
+    }
+    .interests li {
+      margin: 5px 0;
+      line-height: 1.45;
+    }
+    .interests li::marker {
+      color: #fba524;
+    }
+    .seeking strong {
+      background: linear-gradient(transparent 55%, #fff3c4 55%);
+      padding: 0 3px;
+    }
+    .org-logo {
+      display: block;
+      max-width: 170px;
+      max-height: 90px;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="section-drip-nav" aria-label="Page sections">
+    <a href="#about"><span>About</span></a>
+    <a href="#internships"><span>Internships</span></a>
+    <a href="#publications"><span>Publications</span></a>
+    <a href="#service"><span>Service</span></a>
+  </nav>
+
+  <table id="about" class="page-section" style="width:100%;max-width:1250px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table class="about-grid" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td class="about-text" style="padding:2.5%;width:68%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Shucheng Liu</name>
+              </p>
+              <p>
+                Welcome to my homepage! I am a second-year Ph.D. student in Statistics at the
+                <img class="inl" src="images/icon/unc.png" alt=""><a href="https://www.unc.edu/">University of North Carolina at Chapel Hill</a>,
+                advised by Prof. <a href="https://www.med.unc.edu/bigs2/">Hongtu Zhu</a> and Prof. <a href="https://zhangk.web.unc.edu/">Kai Zhang</a>.
+                I also work closely with Prof. <a href="https://callmespring.github.io/">Chengchun Shi</a>.
+                Before UNC, I received my B.S. in Statistics from the
+                <img class="inl" src="images/icon/ustc.png" alt=""><a href="https://en.ustc.edu.cn/">University of Science and Technology of China</a> in 2025.
+                During my undergraduate study, I was fortunate to be advised by
+                Prof. <a href="https://jingzzeng.github.io">Jing Zeng</a> and
+                Prof. <a href="http://staff.ustc.edu.cn/~zhangh/">Hong Zhang</a>.
+              </p>
+              <p>
+                Previously, I was a large language model research intern at <img class="inl" src="images/icon/youtu.svg" alt="">Tencent YouTu Lab. I was also a
+                summer research intern at the <img class="inl" src="images/icon/uw.png" alt="">University of Wisconsin&ndash;Madison, advised by
+                Prof. <a href="https://guanhuac.github.io/">Guanhua Chen</a>.
+              </p>
+              <p class="interests-lead">My research interests include:</p>
+              <ul class="interests">
+                <li><strong>Generative modeling.</strong> Diffusion and flow-matching models and low-dimensional subspace learning from complex, high-dimensional data.</li>
+                <li><strong>Multimodal foundation models.</strong> Representation learning, knowledge integration, and generalization, with applications to biomedical data.</li>
+                <li><strong>Causal inference.</strong> Robust treatment effect estimation from high-dimensional observational data to support reliable decision-making.</li>
+              </ul>
+              <p class="seeking">
+                I&rsquo;m open to exploring any area that matters.
+                <strong>I am currently seeking internship opportunities in Summer 2027.</strong>
+              </p>
+              <div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin: 10px 0;"></div>
+
+              <div class="chips">
+                <a href="mailto:shucheng@unc.edu" id="email-copy" class="chip" title="Click to copy email">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                    <path d="m3 7 9 6 9-6"></path>
+                  </svg>
+                  <span>shucheng@unc.edu</span>
+                </a>
+                <a href="https://www.linkedin.com/in/shucheng-liu-1409422a4/" class="chip" title="LinkedIn">
+                  <svg aria-hidden="true" class="brand" style="--brand:#0A66C2" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="#" class="chip" title="Google Scholar (link to be added)">
+                  <svg aria-hidden="true" class="brand" style="--brand:#4285F4" viewBox="0 0 24 24">
+                    <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"></path>
+                  </svg>
+                  <span>Google Scholar</span>
+                </a>
+                <a href="https://github.com/shucheng2003" class="chip" title="GitHub">
+                  <svg aria-hidden="true" class="brand" style="--brand:#181717" viewBox="0 0 24 24">
+                    <path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.5 2.7 3.2 1.9.1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.5.2 2.8.1 3.1.8.9 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.8C23.4 5.6 18.3.5 12 .5Z"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </td>
+            <td class="about-photo" style="padding:2.5%;width:40%;max-width:40%">
+              <img class="portrait" style="width:85%;max-width:85%;border-radius:8px;" alt="Portrait of Shucheng Liu" src="images/shucheng.jpg">
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table id="internships" class="page-section" width="100%" align="center" border="0" cellpadding="10"><tbody>
+              <heading>Internship Experience</heading>
+          <tr>
+            <td style="padding-left:20px;padding-right:20px;width:22%;vertical-align:middle"><img class="org-logo" src="images/logo/youtu-lab.png" alt="Tencent YouTu Lab"></td>
+            <td width="90%" valign="center">
+              <div class="exp-head"><strong>Tencent YouTu Lab</strong><span class="exp-date">2025.02 - 2025.05</span></div>
+              <strong>Large Language Model Research Intern</strong>
+              <ul class="intern-desc">
+                <li>Formulated efficient reasoning as a sequential decision problem (keep thinking, or stop and answer), so the model learns the accuracy/compute trade-off by exploration rather than imitating a fixed chain-of-thought length.</li>
+                <li>Designed a difficulty-aware RL reward in which a learned question-difficulty coefficient modulates the length penalty: brevity on easy questions, deliberation preserved on hard ones. Characterized when length-penalized RL drifts or destabilizes training.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table id="publications" class="publications-table page-section" style="width:100%;border:0px;border-spacing:0 16px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <heading>Publications</heading>
+   <p>First-author papers are <span style="background-color: #FFFEE0;">highlighted</span>. Click a figure to enlarge.</p>
+
+          <style>
+            .publications-table tr[data-tags] > td {
+              border-top: 1px solid rgba(0, 0, 0, 0.14);
+              border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+              background: #fff;
+            }
+            .publications-table tr[data-tags] > td:first-child {
+              border-left: 1px solid rgba(0, 0, 0, 0.14);
+              border-radius: 8px 0 0 8px;
+            }
+            .publications-table tr[data-tags] > td:last-child {
+              border-right: 1px solid rgba(0, 0, 0, 0.14);
+              border-radius: 0 8px 8px 0;
+            }
+            .publications-table tr[data-tags][style*="lightyellow"] > td {
+              background: lightyellow;
+            }
+
+            .toast-message {
+              position: fixed;
+              top: var(--toast-y, 20px);
+              left: var(--toast-x, 50%);
+              transform: translate(-50%, -120%);
+              background: rgba(255, 255, 255, 0.8);
+              color: #333;
+              padding: 8px 16px;
+              border-radius: 20px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+              z-index: 2000;
+              opacity: 0;
+              transition: all 0.3s ease;
+              pointer-events: none;
+              border: 1px solid rgba(0,0,0,0.05);
+            }
+            .toast-message.show {
+              opacity: 1;
+              transform: translate(-50%, -135%);
+            }
+          </style>
+
+          <script>
+            function copyText(text, event) {
+              const showToast = () => {
+                const toast = document.getElementById('toast');
+                if (event) {
+                  const margin = 12;
+                  const x = Math.min(Math.max(event.clientX, margin), window.innerWidth - margin);
+                  const y = Math.min(Math.max(event.clientY, 48), window.innerHeight - margin);
+                  toast.style.setProperty('--toast-x', x + 'px');
+                  toast.style.setProperty('--toast-y', y + 'px');
+                }
+                toast.classList.add('show');
+                setTimeout(() => {
+                  toast.classList.remove('show');
+                }, 2000);
+              };
+
+              navigator.clipboard.writeText(text).then(function() {
+                showToast();
+              }).catch(function(err) {
+                console.error('Copy failed: ', err);
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                  document.execCommand('copy');
+                  showToast();
+                } catch (err) {
+                  console.error('Fallback copy failed: ', err);
+                }
+                document.body.removeChild(textArea);
+              });
+            }
+
+
+            document.getElementById('email-copy').addEventListener('click', function(e) {
+              e.preventDefault();
+              copyText('shucheng@unc.edu', e);
+            });
+          </script>
+
+          <tr style="background-color: lightyellow;" data-tags="generative,medical">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="paper-thumb">
+                <img src="images/paper/fast-brain.png" alt="FAST-Brain framework overview" data-full="images/paper/fast-brain.png">
+                <span class="paper-thumb-hint">click to enlarge</span>
+              </div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <papertitle>FAST-Brain: A Flow-Aligned Spatio-Temporal Surrogate Brain Model</papertitle>
+              <br>
+              <span><strong>Shucheng Liu</strong></span>,
+              <span>Chengchun Shi</span>,
+              <span>Kai Zhang</span>,
+              <span>Hongtu Zhu</span>
+              <br>
+              <em><strong class="venue-accepted">NeurIPS 2026</strong></em>
+              <p></p>
+              <p>
+              A flow-matching surrogate for rs-fMRI dynamics that regresses the clean signal instead of noise or velocity, so approximation error scales with the intrinsic rather than the ambient dimension. A history-conditioned Transformer is paired with a multi-graph GCN that fuses three anatomical priors through a learnable Laplacian polynomial.
+              </p>
+            </td>
+          </tr>
+
+          <tr style="background-color: lightyellow;" data-tags="causal">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="paper-thumb">
+                <img src="images/paper/wsenet.png" alt="WSENet architecture" data-full="images/paper/wsenet.png">
+                <span class="paper-thumb-hint">click to enlarge</span>
+              </div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <papertitle>Weighted Spline-Expanded Networks with Distributional Balancing for Continuous Treatment Effects</papertitle>
+              <br>
+              <span><strong>Shucheng Liu</strong></span>,
+              <span>Chan Park</span>,
+              <span>Guanhua Chen</span>
+              <br>
+              <em><strong class="venue-accepted">Under review</strong></em>
+              <p></p>
+              <p>
+              Model-free deconfounding for continuous treatments through distance-covariance balancing weights instead of a propensity score, combined with a spline-expanded dose-response network and an influence-function-based weighted targeted regularization that makes the estimator doubly robust. Best integrated RMSE on IHDP, News and TCGA with up to 4,000 covariates.
+              </p>
+            </td>
+          </tr>
+
+          <tr data-tags="medical">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="paper-thumb">
+                <img src="images/paper/mosaic.png" alt="MoSAIC framework overview" data-full="images/paper/mosaic.png">
+                <span class="paper-thumb-hint">click to enlarge</span>
+              </div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <papertitle>MoSAIC: Motion and Supervision-Aware Inference for Myocardial Scar and Edema Segmentation</papertitle>
+              <br>
+              <span><strong>Shucheng Liu</strong></span>,
+              <span>Mingcheng Hu</span>,
+              <span>Liangqiao Gui</span>,
+              <span>Yineng Chen</span>,
+              <span>Peng Huang</span>,
+              <span>Hui Guo</span>,
+              <span>Shu Hu</span>,
+              <span>Xin Wang</span>,
+              <span>Hongtu Zhu</span>
+              <br>
+              <em><strong class="venue-accepted">MICCAI CARE 2026 (Oral, top 10%)</strong></em>
+              <p></p>
+              <p>
+              Modality presence gates and supervision masking pool ragged multi-center cohorts with missing sequences and labels into a single model; a cine branch reads scar from motion alone, with no intensity input.
+              </p>
+            </td>
+          </tr>
+
+          <tr data-tags="medical">
+            <td style="padding:20px;width:30%;vertical-align:middle">
+              <div class="paper-thumb">
+                <img src="images/paper/uu-mamba.png" alt="UU-Mamba training and pseudo-label pipeline" data-full="images/paper/uu-mamba.png">
+                <span class="paper-thumb-hint">click to enlarge</span>
+              </div>
+            </td>
+            <td style="padding:20px;width:70%;vertical-align:middle">
+              <papertitle>Progressive Optimization of UU-Mamba for Left Atrial Multi-Structure Segmentation in CT</papertitle>
+              <br>
+              <span>Yineng Chen</span>,
+              <span>Liangqiao Gui</span>,
+              <span><strong>Shucheng Liu</strong></span>,
+              <span>Mingcheng Hu</span>,
+              <span>Peng Huang</span>,
+              <span>Hui Guo</span>,
+              <span>Shu Hu</span>,
+              <span>Hongtu Zhu</span>,
+              <span>Xin Wang</span>
+              <br>
+              <em><strong class="venue-accepted">MICCAI CARE 2026</strong></em>
+              <p></p>
+              <p>
+              Logit-adjusted cross-entropy and an automated pseudo-label quality-control pipeline (anatomy, stability, morphology) lift mean Dice from 0.880 to 0.930.
+              </p>
+            </td>
+          </tr>
+
+        </tbody></table>
+        <script>
+          (function() {
+            var rows = document.querySelectorAll('.publications-table tr[data-tags]');
+
+            rows.forEach(function(row, index) {
+              var title = row.querySelector('papertitle');
+              if (!title) return;
+
+              var titleContainer = title.closest('a') || title;
+              var firstBreak = titleContainer.nextElementSibling;
+              if (!firstBreak || firstBreak.tagName !== 'BR') return;
+
+              var lastBreak = firstBreak.nextElementSibling;
+              while (lastBreak && lastBreak.tagName !== 'BR') {
+                lastBreak = lastBreak.nextElementSibling;
+              }
+              if (!lastBreak) return;
+
+              var authorNodes = [];
+              var node = firstBreak.nextSibling;
+              while (node && node !== lastBreak) {
+                authorNodes.push(node);
+                node = node.nextSibling;
+              }
+
+              var shell = document.createElement('div');
+              shell.className = 'publication-authors-shell';
+              var authors = document.createElement('div');
+              authors.className = 'publication-authors';
+              authors.id = 'publication-authors-' + index;
+              authorNodes.forEach(function(authorNode) {
+                authors.appendChild(authorNode);
+              });
+
+              var toggle = document.createElement('button');
+              toggle.type = 'button';
+              toggle.className = 'publication-authors-toggle';
+              toggle.textContent = '▶';
+              toggle.setAttribute('aria-controls', authors.id);
+              toggle.setAttribute('aria-expanded', 'false');
+              toggle.setAttribute('aria-label', 'Expand author list');
+              toggle.title = 'Expand author list';
+
+              shell.appendChild(authors);
+              shell.appendChild(toggle);
+              firstBreak.parentNode.insertBefore(shell, firstBreak);
+              firstBreak.remove();
+              lastBreak.remove();
+
+              toggle.addEventListener('click', function() {
+                var expanded = shell.classList.toggle('expanded');
+                toggle.textContent = expanded ? '▼' : '▶';
+                toggle.setAttribute('aria-expanded', String(expanded));
+                toggle.setAttribute('aria-label', expanded ? 'Collapse author list' : 'Expand author list');
+                toggle.title = expanded ? 'Collapse author list' : 'Expand author list';
+              });
+            });
+
+            function updateAuthorToggles() {
+              document.querySelectorAll('.publication-authors-shell').forEach(function(shell) {
+                var authors = shell.querySelector('.publication-authors');
+                var toggle = shell.querySelector('.publication-authors-toggle');
+                var wasExpanded = shell.classList.contains('expanded');
+                if (wasExpanded) shell.classList.remove('expanded');
+                var hasOverflow = authors.scrollHeight > authors.clientHeight + 1;
+                if (wasExpanded) shell.classList.add('expanded');
+                toggle.hidden = !hasOverflow;
+              });
+            }
+
+            updateAuthorToggles();
+
+            var resizeFrame;
+            window.addEventListener('resize', function() {
+              cancelAnimationFrame(resizeFrame);
+              resizeFrame = requestAnimationFrame(updateAuthorToggles);
+            }, { passive: true });
+
+            // Figure lightbox (the #lightbox element lives at the end of <body>)
+            document.addEventListener('DOMContentLoaded', function() {
+              var lightbox = document.getElementById('lightbox');
+              if (!lightbox) return;
+              var lightboxImg = lightbox.querySelector('img');
+              function closeLightbox() {
+                lightbox.classList.remove('open');
+                document.body.style.overflow = '';
+              }
+              document.querySelectorAll('.paper-thumb img[data-full]').forEach(function(img) {
+                img.addEventListener('click', function() {
+                  lightboxImg.src = img.dataset.full;
+                  lightboxImg.alt = img.alt;
+                  lightbox.classList.add('open');
+                  document.body.style.overflow = 'hidden';
+                });
+              });
+              lightbox.addEventListener('click', function(e) {
+                if (e.target !== lightboxImg) closeLightbox();
+              });
+              document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeLightbox();
+              });
+            });
+          })();
+        </script>
+
+
+        <table id="service" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <heading>Service and Teaching</heading>
+          <td style="padding:0px;width:100%;vertical-align:middle">
+            <p class="service-list">
+              <li><strong>Reviewer</strong>: NeurIPS 2026, AISTATS 2026, 2027</li>
+              <li><strong>Lab Instructor &amp; Teaching Assistant</strong>: STOR 120 Foundations of Statistics and Data Science, UNC-Chapel Hill</li>
+              <li><strong>Teaching Assistant</strong>: STOR 320 Methods and Models of Data Science; STOR 415 Introduction to Optimization; STOR 435 Introduction to Probability, UNC-Chapel Hill</li>
+            </p>
+          </td>
+        </tr>
+        </tbody></table>
+
+      </td>
+    </tr>
+  </table>
+
+  <section class="mountain-footer" aria-label="Footer landscape">
+    <div class="mountain-stage">
+      <picture>
+        <source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw">
+        <img class="mountain-img" src="images/experience/background.jpeg" alt="Planet surface seen from orbit" loading="lazy" decoding="async" fetchpriority="low"
+             onerror="this.style.display='none'; this.closest('picture').nextElementSibling.style.display='block';">
+      </picture>
+      <div class="mountain-fallback" style="display:none;"></div>
+      <div class="mountain-content">
+        <h2>Keep Exploring</h2>
+        <p class="mountain-sub">Do what matters, even when it's hard.</p>
+        <a href="mailto:shucheng@unc.edu" class="mountain-cta">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Get in Touch</span>
+        </a>
+        <p class="mountain-footnote">
+          <span>&copy; 2026 Shucheng Liu</span>
+          <span class="mountain-updated">Last updated: <!-- LAST_UPDATED_START -->September 25, 2026<!-- LAST_UPDATED_END -->.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <div id="toast" class="toast-message">✅ Copied</div>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure">
+    <button type="button" class="lightbox-close" aria-label="Close">×</button>
+    <img alt="">
+  </div>
+
+  <script>
+    (function() {
+      var btn = document.getElementById('backToTop');
+      var sectionNav = document.querySelector('.section-drip-nav');
+      var footer = document.querySelector('.mountain-footer');
+
+      function updateSectionNav() {
+        if (!sectionNav || !footer) return;
+        var footerTop = footer.getBoundingClientRect().top;
+        var navBottom = sectionNav.getBoundingClientRect().bottom;
+        sectionNav.classList.toggle('is-footer-visible', footerTop < navBottom + 28);
+      }
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+        updateSectionNav();
+      });
+      window.addEventListener('resize', updateSectionNav);
+      updateSectionNav();
+    })();
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
