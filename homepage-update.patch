@@ -1,0 +1,148 @@
+From 7ce0da8e68788f9033f1fd37d82f19f8e4a59efc Mon Sep 17 00:00:00 2001
+From: claude <claude@local>
+Date: Fri, 2 Oct 2026 06:18:54 +0000
+Subject: [PATCH] Update homepage: Scholar link, paper links, highlight MoSAIC,
+ CV-aligned descriptions
+
+---
+ index.html  | 38 ++++++++++++++++++++++++--------------
+ sitemap.xml |  2 +-
+ 2 files changed, 25 insertions(+), 15 deletions(-)
+
+diff --git a/index.html b/index.html
+index 8e3085b..1afe38e 100644
+--- a/index.html
++++ b/index.html
+@@ -400,7 +400,7 @@
+                   </svg>
+                   <span>LinkedIn</span>
+                 </a>
+-                <a href="#" class="chip" title="Google Scholar (link to be added)">
++                <a href="https://scholar.google.com/citations?hl=en&amp;user=W9AKQFsAAAAJ" class="chip" title="Google Scholar">
+                   <svg aria-hidden="true" class="brand" style="--brand:#4285F4" viewBox="0 0 24 24">
+                     <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"></path>
+                   </svg>
+@@ -456,6 +456,16 @@
+             .publications-table tr[data-tags][style*="lightyellow"] > td {
+               background: lightyellow;
+             }
++            .publications-table a > papertitle:hover {
++              text-decoration: underline;
++            }
++            .paper-links {
++              margin-left: 8px;
++              font-size: 13px;
++            }
++            .paper-links a {
++              margin-right: 6px;
++            }
+ 
+             .toast-message {
+               position: fixed;
+@@ -529,17 +539,17 @@
+               </div>
+             </td>
+             <td style="padding:20px;width:70%;vertical-align:middle">
+-              <papertitle>FAST-Brain: A Flow-Aligned Spatio-Temporal Surrogate Brain Model</papertitle>
++              <a href="https://arxiv.org/pdf/2609.34354" target="_blank" rel="noopener"><papertitle>FAST-Brain: A Flow-Aligned Spatio-Temporal Surrogate Brain Model</papertitle></a>
+               <br>
+               <span><strong>Shucheng Liu</strong></span>,
+               <span>Chengchun Shi</span>,
+               <span>Kai Zhang</span>,
+               <span>Hongtu Zhu</span>
+               <br>
+-              <em><strong class="venue-accepted">NeurIPS 2026</strong></em>
++              <em><strong class="venue-accepted">NeurIPS 2026</strong></em> <span class="paper-links"><a href="https://arxiv.org/pdf/2609.34354" target="_blank" rel="noopener">[arXiv]</a></span>
+               <p></p>
+               <p>
+-              A flow-matching surrogate for rs-fMRI dynamics that regresses the clean signal instead of noise or velocity, so approximation error scales with the intrinsic rather than the ambient dimension. A history-conditioned Transformer is paired with a multi-graph GCN that fuses three anatomical priors through a learnable Laplacian polynomial.
++              Regressing clean signals under a flow-matching objective makes approximation error scale with intrinsic, not ambient, dimension.
+               </p>
+             </td>
+           </tr>
+@@ -552,21 +562,21 @@
+               </div>
+             </td>
+             <td style="padding:20px;width:70%;vertical-align:middle">
+-              <papertitle>Weighted Spline-Expanded Networks with Distributional Balancing for Continuous Treatment Effects</papertitle>
++              <a href="https://arxiv.org/pdf/2609.33740" target="_blank" rel="noopener"><papertitle>Weighted Spline-Expanded Networks with Distributional Balancing for Continuous Treatment Effects</papertitle></a>
+               <br>
+               <span><strong>Shucheng Liu</strong></span>,
+               <span>Chan Park</span>,
+               <span>Guanhua Chen</span>
+               <br>
+-              <em><strong class="venue-accepted">Under review</strong></em>
++              <em><strong class="venue-accepted">Under review</strong></em> <span class="paper-links"><a href="https://arxiv.org/pdf/2609.33740" target="_blank" rel="noopener">[arXiv]</a></span>
+               <p></p>
+               <p>
+-              Model-free deconfounding for continuous treatments through distance-covariance balancing weights instead of a propensity score, combined with a spline-expanded dose-response network and an influence-function-based weighted targeted regularization that makes the estimator doubly robust. Best integrated RMSE on IHDP, News and TCGA with up to 4,000 covariates.
++              Model-free deconfounding without a propensity score, plus an influence-function correction that makes the estimator doubly robust.
+               </p>
+             </td>
+           </tr>
+ 
+-          <tr data-tags="medical">
++          <tr style="background-color: lightyellow;" data-tags="medical">
+             <td style="padding:20px;width:30%;vertical-align:middle">
+               <div class="paper-thumb">
+                 <img src="images/paper/mosaic.png" alt="MoSAIC framework overview" data-full="images/paper/mosaic.png">
+@@ -574,7 +584,7 @@
+               </div>
+             </td>
+             <td style="padding:20px;width:70%;vertical-align:middle">
+-              <papertitle>MoSAIC: Motion and Supervision-Aware Inference for Myocardial Scar and Edema Segmentation</papertitle>
++              <a href="https://papers.miccai.org/miccai-2026-sat/paper/CARE_036.pdf" target="_blank" rel="noopener"><papertitle>MoSAIC: Motion and Supervision-Aware Inference for Myocardial Scar and Edema Segmentation</papertitle></a>
+               <br>
+               <span><strong>Shucheng Liu</strong></span>,
+               <span>Mingcheng Hu</span>,
+@@ -586,10 +596,10 @@
+               <span>Xin Wang</span>,
+               <span>Hongtu Zhu</span>
+               <br>
+-              <em><strong class="venue-accepted">MICCAI CARE 2026 (Oral, top 10%)</strong></em>
++              <em><strong class="venue-accepted">MICCAI CARE 2026 (Oral, top 10%)</strong></em> <span class="paper-links"><a href="https://papers.miccai.org/miccai-2026-sat/paper/CARE_036.pdf" target="_blank" rel="noopener">[PDF]</a></span>
+               <p></p>
+               <p>
+-              Modality presence gates and supervision masking pool ragged multi-center cohorts with missing sequences and labels into a single model; a cine branch reads scar from motion alone, with no intensity input.
++              Presence gates and supervision masking pool ragged multi-center cohorts; a cine branch reads scar from motion alone.
+               </p>
+             </td>
+           </tr>
+@@ -602,7 +612,7 @@
+               </div>
+             </td>
+             <td style="padding:20px;width:70%;vertical-align:middle">
+-              <papertitle>Progressive Optimization of UU-Mamba for Left Atrial Multi-Structure Segmentation in CT</papertitle>
++              <a href="https://papers.miccai.org/miccai-2026-sat/paper/CARE_028.pdf" target="_blank" rel="noopener"><papertitle>Progressive Optimization of UU-Mamba for Left Atrial Multi-Structure Segmentation in CT</papertitle></a>
+               <br>
+               <span>Yineng Chen</span>,
+               <span>Liangqiao Gui</span>,
+@@ -614,10 +624,10 @@
+               <span>Hongtu Zhu</span>,
+               <span>Xin Wang</span>
+               <br>
+-              <em><strong class="venue-accepted">MICCAI CARE 2026</strong></em>
++              <em><strong class="venue-accepted">MICCAI CARE 2026</strong></em> <span class="paper-links"><a href="https://papers.miccai.org/miccai-2026-sat/paper/CARE_028.pdf" target="_blank" rel="noopener">[PDF]</a></span>
+               <p></p>
+               <p>
+-              Logit-adjusted cross-entropy and an automated pseudo-label quality-control pipeline (anatomy, stability, morphology) lift mean Dice from 0.880 to 0.930.
++              Logit adjustment and automated pseudo-label quality control lift mean Dice from 0.880 to 0.930.
+               </p>
+             </td>
+           </tr>
+diff --git a/sitemap.xml b/sitemap.xml
+index 2dabbf9..a9ea2d4 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -2,7 +2,7 @@
+ <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+     <loc>https://shucheng2003.github.io/</loc>
+-    <lastmod>2026-09-25</lastmod>
++    <lastmod>2026-10-02</lastmod>
+     <changefreq>monthly</changefreq>
+     <priority>1.0</priority>
+   </url>
+-- 
+2.43.0
+
